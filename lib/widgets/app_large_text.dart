@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AppLargeText extends StatelessWidget {
   double size;
@@ -18,7 +15,7 @@ class AppLargeText extends StatelessWidget {
       text,
       style: TextStyle(
         color: color,
-        fontSize: size,
+        fontSize:size,
         fontWeight: FontWeight.bold
       ),
     );

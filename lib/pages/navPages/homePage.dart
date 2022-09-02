@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weatherapp/main.dart';
 import 'package:weatherapp/widgets/app_large_text.dart';
 import 'package:weatherapp/widgets/app_text.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,25 +24,25 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return Scaffold(
       body: Column(children: [
         Container(
-          padding: const EdgeInsets.only(top: 50, left: 20),
+          padding: EdgeInsets.only(top: 50.h, left: 20.w),
           //decoration: BoxDecoration(border: Border.all(color: Colors.red)),
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.only(right: 20),
+                padding: EdgeInsets.only(right: 20.w),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(
                         Icons.menu,
-                        size: 30,
+                        size: 30.sp,
                         color: Colors.black,
                       ),
                       Container(
-                        width: 50,
-                        height: 50,
+                        width: 40.w,
+                        height: 40.h,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(10.r),
                             color: Colors.grey.withOpacity(0.5)),
                       )
                     ]),
@@ -60,14 +61,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: TabBar(
-                      labelPadding: const EdgeInsets.only(right: 20),
+                      labelPadding: EdgeInsets.only(right: 20.w),
                       controller: _tabController,
                       labelColor: Colors.black,
                       unselectedLabelColor: Colors.black.withOpacity(0.5),
                       isScrollable: true,
                       indicatorSize: TabBarIndicatorSize.label,
                       indicator: CircleTabIndicator(
-                          color: Color(0xFF5d69b3), radius: 4),
+                          color: Color(0xFF5d69b3), radius: 4.r),
                       tabs: [
                         Tab(
                           text: "Places",
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ),
               ),
               Container(
-                height: 350,
+                height: 350.h,
                 width: double.maxFinite,
                 child: TabBarView(controller: _tabController, children: [
                   ListView.builder(
@@ -90,10 +91,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (BuildContext context, int index) {
                         return Container(
-                          margin: const EdgeInsets.only(right: 15, top: 10),
-                          width: 200,
+                          margin: EdgeInsets.only(right: 15.w, top: 10.h),
+                          width: 200.w,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20.r),
                             color: Colors.white,
                             image: DecorationImage(
                                 image: AssetImage("img/mountain.jpeg"),
@@ -106,16 +107,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ]),
               ),
               SizedBox(
-                height: 50,
+                height: 50.h,
               ),
               Container(
-                padding: EdgeInsets.only(right: 20),
+                padding: EdgeInsets.only(right: 20.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppLargeText(
                       text: "Explore more",
-                      size: 20,
+                      size: 20.sp,
                     ),
                     AppText(
                       text: "See all",
@@ -125,24 +126,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 20.h,
               ),
               Container(
-                height: 120,
+                height: 120.h,
                 width: double.maxFinite,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 4,
                     itemBuilder: (_, index) {
                       return Container(
-                        margin: EdgeInsets.only(left: 10,right: 10),
+                        margin: EdgeInsets.only(left: 10.w,right: 10.h),
                         child: Column(
                           children: [
                             Container(
-                              width: 80,
-                              height: 80,
+                              width: 80.w,
+                              height: 80.h,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(20.r),
                                   color: Color.fromARGB(87, 158, 158, 158),
                                   image: DecorationImage(
                                       image: AssetImage("img/"+images.keys.elementAt(index)),

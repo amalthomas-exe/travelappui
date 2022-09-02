@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/pages/navPages/mainPage.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weatherapp/pages/welcomePage.dart';
 
 void main() {
@@ -12,10 +13,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Weather App",
-      debugShowCheckedModeBanner: false,
-      home: MainPage(),
+    return ScreenUtilInit(
+      designSize: const Size(392, 875),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: ((context, child) {
+        return MaterialApp(
+          title: "Travel App",
+          debugShowCheckedModeBanner: false,
+          home: MainPage(),
+        );
+      }),
     );
   }
 }

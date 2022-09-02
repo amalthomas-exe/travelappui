@@ -3,6 +3,7 @@ import 'package:weatherapp/pages/navPages/barItemsPage.dart';
 import 'package:weatherapp/pages/navPages/homePage.dart';
 import 'package:weatherapp/pages/navPages/myPage.dart';
 import 'package:weatherapp/pages/navPages/searchPage.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -31,8 +32,8 @@ void onTap(int index){
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
-        unselectedFontSize: 0,
-        selectedFontSize: 0,
+        unselectedFontSize: 0.sp,
+        selectedFontSize: 0.sp,
         backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         onTap: onTap,

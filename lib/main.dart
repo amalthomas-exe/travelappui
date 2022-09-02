@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/pages/navPages/mainPage.dart';
+import 'package:weatherapp/pages/mainPage.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:weatherapp/pages/navPages/detailsPage.dart';
 import 'package:weatherapp/pages/welcomePage.dart';
 
 void main() {
@@ -18,10 +19,10 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: ((context, child) {
-        return MaterialApp(
+        return const MaterialApp(
           title: "Travel App",
           debugShowCheckedModeBanner: false,
-          home: MainPage(),
+          home: DetailsPage(),
         );
       }),
     );
